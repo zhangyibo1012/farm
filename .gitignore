@@ -1,0 +1,9 @@
+.DS_Store
+
+# IntelliJ project files
+.idea
+*.iml
+logs
+target
+deploy/*/*.jar
+test
