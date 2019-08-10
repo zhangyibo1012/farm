@@ -24,6 +24,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
+        <!-- common-util -->
+        <dependency>
+            <groupId>cn.orgtec</groupId>
+            <artifactId>farm-common-util</artifactId>
+            <version>${farm.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

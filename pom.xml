@@ -6,7 +6,7 @@
 
     <groupId>cn.orgtec</groupId>
     <artifactId>farm</artifactId>
-    <version>1.0.0</version>
+    <version>${farm.version}</version>
     <modules>
         <module>farm-common</module>
         <module>farm-upms</module>
@@ -15,6 +15,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <farm.version>1.0.0</farm.version>
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <spring-platform.version>Cairo-SR8</spring-platform.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,6 +23,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <hutool.version>4.5.16</hutool.version>
         <security.oauth.version>2.3.6.RELEASE</security.oauth.version>
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <mysql.connector.version>8.0.13</mysql.connector.version>
+        <commons-lang>2.6</commons-lang>
     </properties>
 
     <dependencies>
@@ -36,6 +40,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!--mybatis plus extension,包含了mybatis plus core-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <!--mybatis-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <!--mysql 驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
         </dependency>
     </dependencies>
 

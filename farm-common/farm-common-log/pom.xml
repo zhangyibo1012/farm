@@ -3,19 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>farm</artifactId>
+        <artifactId>farm-common</artifactId>
         <groupId>cn.orgtec</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>farm-common</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>farm-common-log</artifactId>
+    <packaging>jar</packaging>
 
-    <description>公共聚合模块</description>
-    <modules>
-        <module>farm-common-log</module>
-        <module>farm-common-util</module>
-    </modules>
+    <description>日志服务</description>
 
 </project>
