@@ -44,13 +44,13 @@ public class SysRole extends Model<SysRole> {
     private LocalDateTime updateTime;
 
     /**
-     *  删除标识（0-正常,1-删除）
+     * 删除标识（0-正常,1-删除）
      */
     private String delFlag;
 
     /**
-     *  租户 id
+     * 租户 id
      */
     private Integer tenantId;
-  
+
 }

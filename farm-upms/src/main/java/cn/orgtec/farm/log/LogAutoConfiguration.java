@@ -21,15 +21,15 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ConditionalOnWebApplication
 public class LogAutoConfiguration {
 
-	private final SysLogService sysLogClient;
+    private final SysLogService sysLogClient;
 
-	@Bean
-	public SysLogListener sysLogListener() {
-		return new SysLogListener(sysLogClient);
-	}
+    @Bean
+    public SysLogListener sysLogListener() {
+        return new SysLogListener(sysLogClient);
+    }
 
-	@Bean
-	public SysLoggerAspect sysLogAspect() {
-		return new SysLoggerAspect();
-	}
+    @Bean
+    public SysLoggerAspect sysLogAspect() {
+        return new SysLoggerAspect();
+    }
 }

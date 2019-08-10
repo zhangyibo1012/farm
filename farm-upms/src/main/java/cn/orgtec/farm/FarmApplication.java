@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan(basePackages = "cn.orgtec.farm.mapper")
 public class FarmApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(FarmApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FarmApplication.class, args);
+    }
 }

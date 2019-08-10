@@ -13,16 +13,16 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class SysRoleMenu extends Model<SysRoleMenu> {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 角色ID
-	 */
-	private Integer roleId;
+    /**
+     * 角色ID
+     */
+    private Integer roleId;
 
-	/**
-	 * 菜单ID
-	 */
-	private Integer menuId;
+    /**
+     * 菜单ID
+     */
+    private Integer menuId;
 
 }

@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @date 2019/08/10
  */
 @Service
-@Transactional(propagation=Propagation.NESTED,isolation=Isolation.DEFAULT,rollbackFor=Exception.class)
+@Transactional(propagation = Propagation.NESTED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
 public class BannerServiceImpl extends ServiceImpl<BannerMapper, BannerEntity> implements BannerService {
 
 }

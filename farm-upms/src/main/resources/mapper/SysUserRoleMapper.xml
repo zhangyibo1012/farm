@@ -5,8 +5,8 @@
 
 <mapper namespace="cn.orgtec.farm.mapper.SysUserRoleMapper">
 
-  <resultMap id="sysUserRoleMap" type="cn.orgtec.farm.entity.SysUserRole">
-                  <id property="userId" column="user_id"/>
-                        <result property="roleId" column="role_id"/>
-            </resultMap>
+    <resultMap id="sysUserRoleMap" type="cn.orgtec.farm.entity.SysUserRole">
+        <id property="userId" column="user_id"/>
+        <result property="roleId" column="role_id"/>
+    </resultMap>
 </mapper>

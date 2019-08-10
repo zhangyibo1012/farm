@@ -5,8 +5,8 @@
 
 <mapper namespace="cn.orgtec.farm.mapper.SysRoleMenuMapper">
 
-  <resultMap id="sysRoleMenuMap" type="cn.orgtec.farm.entity.SysRoleMenu">
-                  <id property="roleId" column="role_id"/>
-                 <result property="menuId" column="menu_id"/>
-            </resultMap>
+    <resultMap id="sysRoleMenuMap" type="cn.orgtec.farm.entity.SysRoleMenu">
+        <id property="roleId" column="role_id"/>
+        <result property="menuId" column="menu_id"/>
+    </resultMap>
 </mapper>

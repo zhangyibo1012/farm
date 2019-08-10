@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @AllArgsConstructor
-@RequestMapping(value = "/farm" )
+@RequestMapping(value = "/farm")
 public class BannerController {
 
     private final BannerService bannerService;
 
     /**
-     *  平台添加广告位
+     * 平台添加广告位
      *
      * @param banner 广告
      * @return Result
@@ -67,7 +67,8 @@ public class BannerController {
 
     /**
      * 分页查询
-     * @param page 分页对象
+     *
+     * @param page   分页对象
      * @param banner 广播表
      * @return
      */
@@ -87,7 +88,6 @@ public class BannerController {
 //        return new Result<>(bannerService.getById(id));
 //    }
 //
-
 
 
 }
