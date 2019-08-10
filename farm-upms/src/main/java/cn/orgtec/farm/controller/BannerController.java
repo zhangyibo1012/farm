@@ -1,9 +1,9 @@
 package cn.orgtec.farm.controller;
 
+import cn.orgtec.farm.common.core.util.Result;
 import cn.orgtec.farm.entity.BannerEntity;
 import cn.orgtec.farm.service.BannerService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import cn.orgtec.farm.common.core.util.R;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.AllArgsConstructor;
@@ -27,12 +27,41 @@ public class BannerController {
      *  平台添加广告位
      *
      * @param banner 广告
-     * @return R
+     * @return Result
      */
     @PostMapping(value = "/platform/banner")
-    public R save(@RequestBody BannerEntity banner) {
-        return new R<>(bannerService.save(banner));
+    public Result save(@RequestBody BannerEntity banner) {
+
+        boolean result = bannerService.save(banner);
+        return result ? Result.success("添加广告成功") : Result.fail("添加广告失败");
     }
+
+    /**
+     * 平台 通过 id 删除广告
+     *
+     * @param id id
+     * @return Result
+     */
+    @DeleteMapping(value = "/platform/{id}")
+    public Result removeById(@PathVariable(value = "id") Long id) {
+
+        boolean result = bannerService.removeById(id);
+        return result ? Result.success("删除广告成功") : Result.fail("删除广告失败");
+    }
+
+    /**
+     * 修改广告
+     *
+     * @param banner 广告
+     * @return Result
+     */
+    @PutMapping(value = "/platform/banner")
+    public Result updateById(@RequestBody BannerEntity banner) {
+
+        boolean result = bannerService.updateById(banner);
+        return result ? Result.success("修改广告成功") : Result.fail("修改广告失败");
+    }
+
 
     /**
      * 分页查询
@@ -41,41 +70,22 @@ public class BannerController {
      * @return
      */
     @GetMapping(value = "/user/banner")
-    public R<IPage<BannerEntity>> getBannerPage(Page<BannerEntity> page, BannerEntity banner) {
-        return new R<>(bannerService.page(page, Wrappers.query(banner)));
+    public Result<IPage<BannerEntity>> getBannerPage(Page<BannerEntity> page, BannerEntity banner) {
+        return new Result<>(bannerService.page(page, Wrappers.query(banner)));
     }
 
 
 //    /**
 //     * 通过id查询广播表
 //     * @param id id
-//     * @return R
+//     * @return Result
 //     */
 //    @GetMapping("/{id}" )
-//    public R getById(@PathVariable("id" ) Long id) {
-//        return new R<>(bannerService.getById(id));
+//    public Result getById(@PathVariable("id" ) Long id) {
+//        return new Result<>(bannerService.getById(id));
 //    }
 //
 
-//
-//    /**
-//     * 修改广播表
-//     * @param banner 广播表
-//     * @return R
-//     */
-//    @PutMapping
-//    public R updateById(@RequestBody Banner banner) {
-//        return new R<>(bannerService.updateById(banner));
-//    }
-//
-//    /**
-//     * 通过id删除广播表
-//     * @param id id
-//     * @return R
-//     */
-//    @DeleteMapping("/{id}" )
-//    public R removeById(@PathVariable Long id) {
-//        return new R<>(bannerService.removeById(id));
-//    }
+
 
 }

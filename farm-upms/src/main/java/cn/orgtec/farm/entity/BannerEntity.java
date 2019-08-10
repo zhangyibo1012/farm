@@ -1,6 +1,7 @@
 package cn.orgtec.farm.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
@@ -37,8 +38,9 @@ public class BannerEntity extends Model<BannerEntity> {
     private String advertisePhotos;
 
     /**
-     * 上下线状态
+     * 上下线状态  0下线  1上线
      */
+    @TableLogic
     private Integer status;
 
     /**
