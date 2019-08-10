@@ -14,7 +14,6 @@
 
     <description>公共聚合模块</description>
     <modules>
-        <module>farm-common-log</module>
         <module>farm-common-util</module>
     </modules>
 

@@ -17,4 +17,14 @@ public interface CommonConstants {
      * 失败标记
      */
     Integer FAIL = 500;
+
+    /**
+     * 正常
+     */
+    String STATUS_NORMAL = "1";
+
+    /**
+     * 删除
+     */
+    String STATUS_DEL = "0";
 }

@@ -2,6 +2,7 @@ package cn.orgtec.farm.controller;
 
 import cn.orgtec.farm.common.core.util.Result;
 import cn.orgtec.farm.entity.BannerEntity;
+import cn.orgtec.farm.log.annotation.SysLogger;
 import cn.orgtec.farm.service.BannerService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -29,6 +30,7 @@ public class BannerController {
      * @param banner 广告
      * @return Result
      */
+    @SysLogger("平台添加广告位")
     @PostMapping(value = "/platform/banner")
     public Result save(@RequestBody BannerEntity banner) {
 
