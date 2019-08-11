@@ -64,6 +64,17 @@ public class BannerController {
         return result ? Result.success("修改广告成功") : Result.fail("修改广告失败");
     }
 
+    /**
+     * 用户版 首页广告位展示
+     *
+     * @return Result
+     */
+    @GetMapping(value = "/user/app/banner")
+    public Result getBanner() {
+
+        return Result.success(bannerService.getBannersBySort());
+    }
+
 
     /**
      * 分页查询
