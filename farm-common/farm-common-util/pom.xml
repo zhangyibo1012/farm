@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>farm-common-util</artifactId>
-    <packaging>jar</packaging>
 
     <description>farm 公共工具类核心包</description>
 

@@ -28,6 +28,7 @@ public class BannerServiceImpl extends ServiceImpl<BannerMapper, BannerEntity> i
 
     @Override
     public List<BannerEntity> getBannersBySort() {
+
         return bannerMapper.selectPage(
                 new Page<>(1, 5),
                 Wrappers.<BannerEntity>query()

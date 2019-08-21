@@ -6,12 +6,11 @@
 
     <groupId>cn.orgtec</groupId>
     <artifactId>farm</artifactId>
-    <version>${farm.version}</version>
+    <version>1.0.0</version>
     <modules>
         <module>farm-common</module>
         <module>farm-upms</module>
     </modules>
-    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
 
     <properties>
@@ -27,6 +26,7 @@
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
         <mysql.connector.version>8.0.13</mysql.connector.version>
         <commons-lang>2.6</commons-lang>
+        <docker.image.prefix>orgtec</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -101,7 +101,6 @@
     </dependencyManagement>
 
     <build>
-        <finalName>${project.name}</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -126,13 +125,11 @@
         </pluginManagement>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
                 <configuration>
-                    <target>${maven.compiler.target}</target>
-                    <source>${maven.compiler.source}</source>
-                    <encoding>UTF-8</encoding>
-                    <skip>true</skip>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>

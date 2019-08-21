@@ -85,6 +85,7 @@ public class BannerController {
      */
     @GetMapping(value = "/user/banner")
     public Result<IPage<BannerEntity>> getBannerPage(Page<BannerEntity> page, BannerEntity banner) {
+
         return new Result<>(bannerService.page(page, Wrappers.query(banner)));
     }
 

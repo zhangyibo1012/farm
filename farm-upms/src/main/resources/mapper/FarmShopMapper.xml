@@ -14,6 +14,7 @@
         <result property="consumption" column="consumption"/>
         <result property="accommodation" column="accommodation"/>
         <result property="diningRoom" column="dining_room"/>
+        <result property="farmName" column="farm_name"/>
         <result property="businessLicens" column="business_licens"/>
         <result property="status" column="status"/>
         <result property="lng" column="lng"/>

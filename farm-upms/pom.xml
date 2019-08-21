@@ -39,10 +39,55 @@
         <dependency>
             <groupId>cn.orgtec</groupId>
             <artifactId>farm-common-util</artifactId>
-            <version>1.0.0</version>
+            <version>${farm.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- http request data -->
+        <dependency>
+            <groupId>cn.orgtec</groupId>
+            <artifactId>farm-common-request</artifactId>
+            <version>${farm.version}</version>
             <scope>compile</scope>
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.6.RELEASE</version>
+                <configuration>
+                    <!--配置为执行-->
+                    <classifier>exec</classifier>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <imageName>orgtec/${project.artifactId}</imageName>
+                    <dockerHost>http://192.168.32.152:2375</dockerHost>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -17,4 +17,7 @@ farm
 mysql版本 5.7.25
 192.168.2.248 farm-mysql  // 指向数据库IP
 
+mvn package docker:build
+
+docker tag b03b74b01d97 docker-redis:0.0.1
 ```

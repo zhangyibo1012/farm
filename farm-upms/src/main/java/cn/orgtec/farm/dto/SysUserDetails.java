@@ -28,4 +28,5 @@ public class SysUserDetails implements Serializable {
      * 权限标识集合
      */
     private String[] permissions;
+
 }

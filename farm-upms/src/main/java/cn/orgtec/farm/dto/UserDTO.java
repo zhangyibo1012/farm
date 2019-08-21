@@ -13,6 +13,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class UserDTO extends SysUser {
+
     /**
      * 角色ID
      */

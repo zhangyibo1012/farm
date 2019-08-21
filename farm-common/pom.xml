@@ -15,6 +15,7 @@
     <description>公共聚合模块</description>
     <modules>
         <module>farm-common-util</module>
+        <module>farm-common-request</module>
     </modules>
 
 </project>

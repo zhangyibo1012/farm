@@ -72,6 +72,11 @@ public class FarmShopEntity extends Model<FarmShopEntity> {
     private Integer status;
 
     /**
+     *  农家名称
+     */
+    private String farmName;
+
+    /**
      * 经度
      */
     private String lng;
