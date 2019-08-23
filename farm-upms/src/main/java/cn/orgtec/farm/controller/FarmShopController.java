@@ -167,13 +167,6 @@ public class FarmShopController {
         return result ? Result.success("新增农家成功") : Result.fail("新增农家失败");
     }
 
-    @GetMapping(value = "/test")
-    public Result getish() {
-        QueryWrapper<DishEntity> dishQuery = new QueryWrapper<>();
-        List<DishEntity> farmDishs = dishService.list(dishQuery.eq("shop_id", "1"));
-        return Result.success(farmDishs);
-    }
-
     /**
      * 组装查询结果
      *

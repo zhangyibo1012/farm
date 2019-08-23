@@ -1,6 +1,7 @@
 package cn.orgtec.farm.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
@@ -32,7 +33,7 @@ public class FarmRoomEntity extends Model<FarmRoomEntity> {
     /**
      * 房间名称
      */
-    private String name;
+    private String roomName;
 
     /**
      * 房间图片
@@ -85,8 +86,9 @@ public class FarmRoomEntity extends Model<FarmRoomEntity> {
     private String roomDescribe;
 
     /**
-     * 房间上下架
+     * 房间上下架   逻辑删除  0下架  1上架
      */
+    @TableLogic
     private Integer updownStatus;
 
     /**

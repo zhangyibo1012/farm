@@ -39,7 +39,7 @@ public class BannerController {
     }
 
     /**
-     * 平台 通过 id 删除广告
+     * 平台 通过 id 删除广告  逻辑删除
      *
      * @param id id
      * @return Result
@@ -80,7 +80,7 @@ public class BannerController {
      * 分页查询
      *
      * @param page   分页对象
-     * @param banner 广播表
+     * @param banner 广告表
      * @return Result<>
      */
     @GetMapping(value = "/user/banner")

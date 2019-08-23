@@ -8,7 +8,7 @@
     <resultMap id="farmRoomMap" type="cn.orgtec.farm.entity.FarmRoomEntity">
         <id property="id" column="id"/>
         <result property="shopId" column="shop_id"/>
-        <result property="name" column="name"/>
+        <result property="roomName" column="room_name"/>
         <result property="roomPhotos" column="room_photos"/>
         <result property="price" column="price"/>
         <result property="breakfast" column="breakfast"/>

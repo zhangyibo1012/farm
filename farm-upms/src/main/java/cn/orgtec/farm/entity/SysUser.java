@@ -24,6 +24,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -48,6 +50,10 @@ public class SysUser implements Serializable {
      */
     private String username;
 
+    /**
+     *  指定属性不序列化回页面
+     */
+    @JsonIgnore
     private String password;
 
     /**
