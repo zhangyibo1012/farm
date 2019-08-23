@@ -7,10 +7,9 @@ import cn.orgtec.farm.http.request.data.FarmUpDownRequestData;
 import cn.orgtec.farm.log.annotation.SysLogger;
 import cn.orgtec.farm.service.FarmShopService;
 import lombok.AllArgsConstructor;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -89,6 +88,18 @@ public class FarmShopController {
         Boolean successful = farmShopService.updateStatusById(requestData.getFarmId(), requestData
                 .getStatus());
         return successful ? Result.ok("更新成功") : Result.fail("更新失败");
+    }
+
+    /**
+     * 展示已经添加的热门农家列表
+     *
+     * @return   Result
+     */
+    @GetMapping(value = "/user/hostfarm")
+    public Result findHostFromShop(){
+
+        return Result.success(farmShopService.findHostFromShop()) ;
+
     }
 
 

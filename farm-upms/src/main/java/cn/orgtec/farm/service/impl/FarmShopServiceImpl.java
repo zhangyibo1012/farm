@@ -64,4 +64,11 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
         return farmShopMapper.updateStatusById(id, status) > 0;
     }
 
+    @Override
+    public List<FarmShopEntity> findHostFromShop() {
+        LambdaQueryWrapper<FarmShopEntity> lambdaQuery = Wrappers.lambdaQuery();
+        lambdaQuery.eq(FarmShopEntity::getRecommend ,"1");
+        return this.list(lambdaQuery);
+    }
+
 }

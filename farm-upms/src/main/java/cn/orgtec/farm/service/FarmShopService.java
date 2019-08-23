@@ -58,4 +58,11 @@ public interface FarmShopService extends IService<FarmShopEntity> {
      * @return true / false
      */
     Boolean updateStatusById(Long id, Integer status);
+
+    /**
+     * 展示已经添加的热门农家列表
+     *
+     * @return   List<FarmShopEntity>
+     */
+    List<FarmShopEntity> findHostFromShop();
 }
