@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- *  农家
+ * 农家
  *
  * @author Yibo Zhang
  * @date 2019/08/23
@@ -59,7 +59,7 @@ public class FarmShop implements Serializable {
 
 
     /**
-     *  农家名称
+     * 农家名称
      */
     private String farmName;
 

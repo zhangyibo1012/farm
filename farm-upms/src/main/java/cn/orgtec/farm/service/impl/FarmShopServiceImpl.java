@@ -26,19 +26,19 @@ import java.util.Map;
 @AllArgsConstructor
 public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEntity> implements FarmShopService {
 
-        private final FarmShopMapper farmShopMapper;
+    private final FarmShopMapper farmShopMapper;
 
     @Override
     public Boolean updateUpDownById(Long id, Integer status) {
         // TODO: 2019/8/23   需要更新和农家相关的房间和美食
-         return farmShopMapper.updateUpDownById(id, status) > 0;
+        return farmShopMapper.updateUpDownById(id, status) > 0;
     }
 
     @Override
     public List<FarmShopEntity> findFromShopByStatus() {
 
         LambdaQueryWrapper<FarmShopEntity> lambdaQuery = Wrappers.lambdaQuery();
-        lambdaQuery.eq(FarmShopEntity::getStatus ,1);
+        lambdaQuery.eq(FarmShopEntity::getStatus, 1);
         return this.list(lambdaQuery);
     }
 
@@ -46,14 +46,14 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
     public List<FarmShopEntity> findFromShopByFromName(String fromNameKeyword) {
 
         LambdaQueryWrapper<FarmShopEntity> lambdaQuery = Wrappers.lambdaQuery();
-        lambdaQuery.like(FarmShopEntity::getFarmName ,fromNameKeyword);
+        lambdaQuery.like(FarmShopEntity::getFarmName, fromNameKeyword);
         return this.list(lambdaQuery);
     }
 
     @Override
-    public Long countFarms(Map<String,String> params) {
+    public Long countFarms(Map<String, String> params) {
 
-        return farmShopMapper.countFarms(params.get("beginDate") , params.get("endDate"));
+        return farmShopMapper.countFarms(params.get("beginDate"), params.get("endDate"));
     }
 
     @Override
@@ -68,7 +68,7 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
         LambdaQueryWrapper<FarmShopEntity> lambdaQuery = Wrappers.lambdaQuery();
 
         lambdaQuery.
-                eq(FarmShopEntity::getRecommend ,CommonConstants.STATUS_NORMAL)
+                eq(FarmShopEntity::getRecommend, CommonConstants.STATUS_NORMAL)
                 .eq(FarmShopEntity::getStatus, CommonConstants.STATUS_NORMAL)
                 .eq(FarmShopEntity::getUpdownStatus, CommonConstants.STATUS_NORMAL);
         return this.list(lambdaQuery);
@@ -79,7 +79,7 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
         LambdaQueryWrapper<FarmShopEntity> lambdaQuery = Wrappers.lambdaQuery();
 
         lambdaQuery.
-                eq(FarmShopEntity::getRecommend ,CommonConstants.STATUS_NORMAL);
+                eq(FarmShopEntity::getRecommend, CommonConstants.STATUS_NORMAL);
         return this.list(lambdaQuery);
     }
 
@@ -87,7 +87,7 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
     public FarmShop findFromShopById(Long id) {
         FarmShopEntity farmShopEntity = this.getById(id);
 
-        if (null != farmShopEntity){
+        if (null != farmShopEntity) {
             return FarmShopBeanMapper.mapNew(farmShopEntity);
         }
         return null;

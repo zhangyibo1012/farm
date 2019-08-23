@@ -2,7 +2,7 @@ package cn.orgtec.farm.http.request;
 
 
 /**
- *  审核状态
+ * 审核状态
  *
  * @author Yibo Zhang
  * @date 2019/08/21

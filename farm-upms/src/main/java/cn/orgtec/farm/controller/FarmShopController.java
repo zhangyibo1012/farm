@@ -42,8 +42,8 @@ public class FarmShopController {
     /**
      * 更新农家上下架状态，一次只更新一个字段
      *
-     * @param requestData  请求数据
-     * @return      Result
+     * @param requestData 请求数据
+     * @return Result
      */
     @SysLogger("平台对已入驻农家进行上下架")
     @PutMapping(value = "/platform/farmshop/updown")
@@ -57,7 +57,7 @@ public class FarmShopController {
     /**
      * 展示已入驻农家列表
      *
-     * @return  农家列表
+     * @return 农家列表
      */
     @SysLogger("平台展示已入驻农家列表")
     @GetMapping(value = "/platform/farmshops")
@@ -69,11 +69,11 @@ public class FarmShopController {
     /**
      * 展示已入驻农家详情
      *
-     * @return  农家列表
+     * @return 农家列表
      */
     @SysLogger("平台展示已入驻农家详情")
     @GetMapping(value = "/platform/farmshop/detail/{farmId:\\d+}")
-    public  Result<PlumpFarm> findFromShop(@PathVariable(value = "farmId") Long id) {
+    public Result<PlumpFarm> findFromShop(@PathVariable(value = "farmId") Long id) {
 
         FarmShop farmShop = farmShopService.findFromShopById(id);
 
@@ -88,8 +88,8 @@ public class FarmShopController {
     /**
      * 通过农家名称进行关键词模糊搜索
      *
-     * @param fromNameKeyword  农家名称进行关键词
-     * @return  农家列表
+     * @param fromNameKeyword 农家名称进行关键词
+     * @return 农家列表
      */
     @SysLogger("平台通过农家名称进行关键词搜索")
     @GetMapping(value = "/platform/search/farmshops/{keyword}")
@@ -111,8 +111,8 @@ public class FarmShopController {
     /**
      * 农家审核，一次只更新一个字段
      *
-     * @param requestData  请求数据
-     * @return      Result
+     * @param requestData 请求数据
+     * @return Result
      */
     @SysLogger("平台对已入驻农家进行上下架")
     @PutMapping(value = "/platform/farmshop/status")
@@ -125,31 +125,31 @@ public class FarmShopController {
 
     /**
      * 用户展示已经添加的热门农家列表
-     *
+     * <p>
      * recommend    0不推荐  1推荐的
      * status       0审核中 1审核通过 2审核失败
      * updownStatus 0下架  1上架
      *
-     * @return   Result
+     * @return Result
      */
     @GetMapping(value = "/user/hostfarms")
-    public Result findHostFromShop(){
+    public Result findHostFromShop() {
 
-        return Result.success(farmShopService.findHostFromShop()) ;
+        return Result.success(farmShopService.findHostFromShop());
 
     }
 
     /**
      * 平台展示已经添加的热门农家列表
-     *
+     * <p>
      * recommend    0不推荐  1推荐的
      *
-     * @return   Result
+     * @return Result
      */
     @GetMapping(value = "/platform/hostfarms")
-    public Result getHostFromShop(){
+    public Result getHostFromShop() {
 
-        return Result.success(farmShopService.getHostFromShop()) ;
+        return Result.success(farmShopService.getHostFromShop());
 
     }
 
@@ -168,16 +168,16 @@ public class FarmShopController {
     }
 
     @GetMapping(value = "/test")
-    public Result getish(){
+    public Result getish() {
         QueryWrapper<DishEntity> dishQuery = new QueryWrapper<>();
         List<DishEntity> farmDishs = dishService.list(dishQuery.eq("shop_id", "1"));
-      return   Result.success(farmDishs);
+        return Result.success(farmDishs);
     }
 
     /**
      * 组装查询结果
      *
-     * @param farmShop  农家详情
+     * @param farmShop 农家详情
      * @return 农家详情
      */
     private Result<PlumpFarm> assemble(FarmShop farmShop) {

@@ -81,7 +81,7 @@ public class BannerController {
      *
      * @param page   分页对象
      * @param banner 广播表
-     * @return        Result<>
+     * @return Result<>
      */
     @GetMapping(value = "/user/banner")
     public Result<IPage<BannerEntity>> getBannerPage(Page<BannerEntity> page, BannerEntity banner) {

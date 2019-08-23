@@ -1,7 +1,5 @@
 package cn.orgtec.farm.entity;
 
-import cn.orgtec.farm.dto.Dish;
-import cn.orgtec.farm.dto.FarmShop;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
@@ -9,7 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * 农家店铺表
@@ -75,7 +72,7 @@ public class FarmShopEntity extends Model<FarmShopEntity> {
     private Integer status;
 
     /**
-     *  农家名称
+     * 农家名称
      */
     private String farmName;
 

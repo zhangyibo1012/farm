@@ -6,7 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- *  farm 包装器
+ * farm 包装器
  *
  * @author Yibo Zhang
  * @date 2019/08/23
