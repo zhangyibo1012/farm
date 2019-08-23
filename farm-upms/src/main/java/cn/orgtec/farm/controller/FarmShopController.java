@@ -177,7 +177,7 @@ public class FarmShopController {
     /**
      * 组装查询结果
      *
-     * @param farmShop 广播
+     * @param farmShop  农家详情
      * @return 农家详情
      */
     private Result<PlumpFarm> assemble(FarmShop farmShop) {
