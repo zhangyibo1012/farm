@@ -1,4 +1,4 @@
-package cn.orgtec.farm.http.request.data;
+package cn.orgtec.farm.http.request;
 
 
 /**

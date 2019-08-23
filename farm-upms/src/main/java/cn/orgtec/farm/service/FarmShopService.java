@@ -1,6 +1,8 @@
 package cn.orgtec.farm.service;
 
+import cn.orgtec.farm.dto.FarmShop;
 import cn.orgtec.farm.entity.FarmShopEntity;
+import cn.orgtec.farm.response.PlumpFarm;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.util.MultiValueMap;
 
@@ -60,9 +62,33 @@ public interface FarmShopService extends IService<FarmShopEntity> {
     Boolean updateStatusById(Long id, Integer status);
 
     /**
-     * 展示已经添加的热门农家列表
+     * 用户展示已经添加的热门农家列表
      *
-     * @return   List<FarmShopEntity>
+     * recommend    0不推荐  1推荐的
+     * status       0审核中 1审核通过 2审核失败
+     * updownStatus 0下架  1上架
+     *
+     * @return   Result
      */
     List<FarmShopEntity> findHostFromShop();
+
+    /**
+     * 平台展示已经添加的热门农家列表
+     *
+     * recommend    0不推荐  1推荐的
+     * status       0审核中 1审核通过 2审核失败
+     * updownStatus 0下架  1上架
+     *
+     * @return   Result
+     */
+    List<FarmShopEntity> getHostFromShop();
+
+    /**
+     *  findFromShopById
+     *
+     * @param id  农家 Id
+     * @return    PlumpFarm
+     */
+    FarmShop findFromShopById(Long id);
+
 }

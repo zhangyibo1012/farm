@@ -1,32 +1,25 @@
-package cn.orgtec.farm.entity;
+package cn.orgtec.farm.dto;
 
-import cn.orgtec.farm.dto.Dish;
-import cn.orgtec.farm.dto.FarmShop;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * 农家店铺表
+ *  农家
  *
  * @author Yibo Zhang
- * @date 2019/08/10
+ * @date 2019/08/23
  */
 @Data
-@TableName("farm_shop")
-@EqualsAndHashCode(callSuper = true)
-public class FarmShopEntity extends Model<FarmShopEntity> {
-    private static final long serialVersionUID = 2158446656915960146L;
+public class FarmShop implements Serializable {
+
+    private static final long serialVersionUID = 1026296372948138925L;
 
     /**
-     * 唯一标识
+     * 农家 id
      */
-    @TableId
     private Long id;
 
     /**
@@ -64,15 +57,6 @@ public class FarmShopEntity extends Model<FarmShopEntity> {
      */
     private Integer diningRoom;
 
-    /**
-     * 营业执照
-     */
-    private String businessLicens;
-
-    /**
-     * 0：审核中 1：审核通过 2：审核失败
-     */
-    private Integer status;
 
     /**
      *  农家名称
@@ -100,18 +84,12 @@ public class FarmShopEntity extends Model<FarmShopEntity> {
     private LocalDateTime createTime;
 
     /**
-     * 更新日期
+     * 房间，根据店铺场景可能为空
      */
-    private LocalDateTime updateTime;
+    private List<FarmRoom> farmRooms;
 
     /**
-     * 0 不推荐  1推荐
+     * 房间，根据店铺场景可能为空
      */
-    private Integer recommend;
-
-    /**
-     * 0 下架  1上架
-     */
-    private Integer updownStatus;
-
+    private List<Dish> dishs;
 }

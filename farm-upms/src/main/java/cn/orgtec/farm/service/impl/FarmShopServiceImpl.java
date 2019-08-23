@@ -1,20 +1,18 @@
 package cn.orgtec.farm.service.impl;
 
-import cn.hutool.core.convert.Convert;
+import cn.orgtec.farm.common.core.constant.CommonConstants;
+import cn.orgtec.farm.dto.FarmShop;
 import cn.orgtec.farm.entity.FarmShopEntity;
+import cn.orgtec.farm.entity.mapper.FarmShopBeanMapper;
 import cn.orgtec.farm.mapper.FarmShopMapper;
 import cn.orgtec.farm.service.FarmShopService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.util.MultiValueMap;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +30,7 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
 
     @Override
     public Boolean updateUpDownById(Long id, Integer status) {
-
+        // TODO: 2019/8/23   需要更新和农家相关的房间和美食
          return farmShopMapper.updateUpDownById(id, status) > 0;
     }
 
@@ -59,6 +57,7 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public Boolean updateStatusById(Long id, Integer status) {
 
         return farmShopMapper.updateStatusById(id, status) > 0;
@@ -67,8 +66,31 @@ public class FarmShopServiceImpl extends ServiceImpl<FarmShopMapper, FarmShopEnt
     @Override
     public List<FarmShopEntity> findHostFromShop() {
         LambdaQueryWrapper<FarmShopEntity> lambdaQuery = Wrappers.lambdaQuery();
-        lambdaQuery.eq(FarmShopEntity::getRecommend ,"1");
+
+        lambdaQuery.
+                eq(FarmShopEntity::getRecommend ,CommonConstants.STATUS_NORMAL)
+                .eq(FarmShopEntity::getStatus, CommonConstants.STATUS_NORMAL)
+                .eq(FarmShopEntity::getUpdownStatus, CommonConstants.STATUS_NORMAL);
         return this.list(lambdaQuery);
+    }
+
+    @Override
+    public List<FarmShopEntity> getHostFromShop() {
+        LambdaQueryWrapper<FarmShopEntity> lambdaQuery = Wrappers.lambdaQuery();
+
+        lambdaQuery.
+                eq(FarmShopEntity::getRecommend ,CommonConstants.STATUS_NORMAL);
+        return this.list(lambdaQuery);
+    }
+
+    @Override
+    public FarmShop findFromShopById(Long id) {
+        FarmShopEntity farmShopEntity = this.getById(id);
+
+        if (null != farmShopEntity){
+            return FarmShopBeanMapper.mapNew(farmShopEntity);
+        }
+        return null;
     }
 
 }

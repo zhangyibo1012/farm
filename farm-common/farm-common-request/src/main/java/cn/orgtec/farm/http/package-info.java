@@ -1,6 +1,6 @@
 @NonNullApi
 @NonNullFields
-package cn.orgtec.farm.http.request;
+package cn.orgtec.farm.http;
 
 
 import org.springframework.lang.NonNullApi;

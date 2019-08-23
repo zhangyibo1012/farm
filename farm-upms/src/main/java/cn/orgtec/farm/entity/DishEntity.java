@@ -34,12 +34,12 @@ public class DishEntity extends Model<DishEntity> {
     /**
      * 菜品名称
      */
-    private String name;
+    private String dishName;
 
     /**
      * 菜品描述
      */
-    private String describe;
+    private String dishDescribe;
 
     /**
      * 菜品图片

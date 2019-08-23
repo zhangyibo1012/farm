@@ -24,6 +24,11 @@ public interface CommonConstants {
     String STATUS_NORMAL = "1";
 
     /**
+     * 非正常
+     */
+    String STATUS_NO_NORMAL = "0";
+
+    /**
      * 删除
      */
     String STATUS_DEL = "0";
