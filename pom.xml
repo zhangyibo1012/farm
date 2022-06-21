@@ -24,7 +24,7 @@
         <hutool.version>4.5.16</hutool.version>
         <security.oauth.version>2.3.6.RELEASE</security.oauth.version>
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
-        <mysql.connector.version>8.0.13</mysql.connector.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
         <commons-lang>2.6</commons-lang>
         <docker.image.prefix>orgtec</docker.image.prefix>
     </properties>
